@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>团购系统</title>
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div class="well">
+        <h1>团购系统</h1>
+        <p>
+	{{ myNotice|linebreaks }} </p>
+<p>现在正在团购的商品:</p>
+  
+	 
+	<form action="/select-get/" method="get">
+		
+		<table border='1'> <tr><th>商品名</th><th>信息说明</th><th>选择</th></tr>{% for item in item_list %}{%for i in item%}<tr><td>{{ i.ProductName }}</td><td>{{ i.ProductIntro }}</td><td><input checked="checked" name="check" type="checkbox" value={{i.GroupID}} /></td></tr>{% endfor %}{% endfor %}</table>
+<input type="submit" value="查看" >
+		
+	</form>
+    </div>
+
+</body>
+</html>
