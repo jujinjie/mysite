@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'gb',
         'USER': 'root',
-        'PASSWORD': '19830218jjj',
+        'PASSWORD': 'mydjango',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
