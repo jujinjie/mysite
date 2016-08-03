@@ -39,11 +39,15 @@ def selectpost(request):
         #message = 'You searched for: %r' %request.GET.getlist('check')
         message=''
         messagelist=request.GET.getlist('check')
-        for m in messagelist:
+        singlelist=list(set(messagelist))
+        lst=[]
+        for m in singlelist:
             p=ProductInfo.objects.filter(GroupID=m)
-            print p
-            #mm='%s'%m
-            #message+=mm
+            lst.append(p)
+        for n in lst:
+            for k in n:
+                mm='%s'%k
+                message+=mm
     else:
         message = 'You submitted an empty form.'
     return HttpResponse(message)
