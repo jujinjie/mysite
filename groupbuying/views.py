@@ -46,7 +46,7 @@ def selectpost(request):
             lst.append(p)
         for n in lst:
             for k in n:
-                mm='%s'%k
+                mm='%s\n'%k
                 message+=mm
     else:
         message = 'You submitted an empty form.'
